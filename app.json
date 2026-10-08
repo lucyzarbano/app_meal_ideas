@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "Tavola",
+    "slug": "tavola-family",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F7F3EA",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "defaultChannel": "promemoria-menu"
+        }
+      ],
+      "expo-sqlite"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#153A2F"
+      }
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

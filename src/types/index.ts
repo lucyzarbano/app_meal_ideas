@@ -1,0 +1,51 @@
+export type TabKey = "oggi" | "settimana" | "idee" | "famiglia";
+export type Recipe = { id: number; title: string; time: string; match: number; tags: string[]; emoji: string; color: string; rating: number; votes: number };
+export type FamilyMember = { id: string; name: string; role: string; avatar: string; color: string; notes: string };
+export type MenuDay = { short: string; day: string; meal: string; emoji: string; color: string };
+export type CustomRecipe = {
+  id: string;
+  parentRecipeId: string | null;
+  title: string;
+  description: string;
+  servings: number;
+  prepMinutes: number;
+  cookMinutes: number;
+  difficulty: "easy" | "medium" | "advanced";
+  mainProtein: string | null;
+  rating: number;
+  votes: number;
+};
+export type NewRecipeInput = {
+  title: string;
+  description: string;
+  servings: number;
+  prepMinutes: number;
+  cookMinutes: number;
+  difficulty: "easy" | "medium" | "advanced";
+  mainProtein: string;
+  ingredients: { name: string; quantity: string; unit: string; preparation?: string; optional?: boolean }[];
+  steps: { instruction: string }[];
+};
+export type RecipeDetail = NewRecipeInput & {
+  id: string;
+  source: "catalog" | "custom";
+  imageKey: string | null;
+  tags: string[];
+};
+export type SuggestedRecipe = {
+  id: string;
+  title: string;
+  description: string;
+  prepMinutes: number;
+  cookMinutes: number;
+  difficulty: string;
+  mainProtein: string | null;
+  imageKey: string | null;
+  matchScore: number;
+  tasteScore: number;
+  varietyScore: number;
+  totalScore: number;
+  rating: number;
+  votes: number;
+  reason: string;
+};
